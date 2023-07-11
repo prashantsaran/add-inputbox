@@ -1,0 +1,46 @@
+<div class="my-component">
+
+    <form [formGroup]="myForm" class=" border  horizontal-form m-2 bg-light text-dark rounded-3">
+        <div class="form-group pt-3">
+            <label for="nameInput">Name:</label>
+            <input type="text" id="nameInput" formControlName="name" />
+            <div>
+                <span class="text-danger font-italic small" *ngIf="name  && name.touched && name.invalid">Please Enter
+                    Name</span>
+            </div>
+        </div>
+
+
+        <div *ngIf="selectedType === 'email'" class="form-group pt-3">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" formControlName="email">
+             <div>
+                <span class=" text-danger font-italic small" *ngIf="email &&  email.invalid && email.touched">Enter
+                    Valid Email
+                </span>
+            </div>
+        </div>
+
+        <div *ngIf="selectedType === 'phone' || selectedType === ''" class="form-group pt-3">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone" formControlName="phone">
+            <div>
+                <span class=" text-danger font-italic small" *ngIf="phone &&  phone.invalid && phone.touched ">Enter
+                    Valid Number
+                </span>
+            </div>
+        </div>
+        <div class="form-group pt-3">
+            <label for="Type">Type</label>
+            <select id="type" name="type" formControlName="selectedType" (change)="onChange($event)">
+                <option value="">Select</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+            </select>
+        </div>
+
+
+     
+
+    </form>
+</div>

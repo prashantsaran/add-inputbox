@@ -1,0 +1,28 @@
+<div class="p-4 mb-3">
+    <h3>Fill Details:</h3>
+  </div>
+  
+  <div class="card-header mb-2">
+    <button class="add-button btn btn-success rounded-circle" (click)="addComponent()">+</button>
+  </div>
+  
+  <div class="card mt-5" style="height: 400px; overflow-y: auto;">
+    <div class="card-content">
+      <div *ngFor="let component of components">
+        <app-child-component></app-child-component>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card-footer ">
+    <div>
+    <div class="d-flex outer justify-content-center">
+      <button class=" btn btn-primary" (click)="saveDetails()">Save Details</button>
+    </div>
+  </div>
+ 
+    <div class="alert" [class.alert-success]="show" [class.alert-danger]=" !show  " role="alert" >
+      {{show ? "Data Added Successfully" : "Please fill All the fields Correctly"}}
+    </div>
+  </div>
+

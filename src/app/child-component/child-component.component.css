@@ -1,0 +1,17 @@
+.my-component {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .horizontal-form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .form-group {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
